@@ -46,29 +46,29 @@ class ComparisonActivity : AppCompatActivity() {
                 val c: Float = inpC.text.toString().toFloatOrNull() ?: 0f
                 val d: Float = inpD.text.toString().toFloatOrNull() ?: 0f
 
-                // знаменатели дробей не могут быть нулевыми
-                if (b == 0f || d == 0f) {
+                // знаменатели дробей (кол-во A и кол-во B) не могут быть нулевыми
+                if (a == 0f || c == 0f) {
                     Toast.makeText(this, R.string.toast_denominator_zero, Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
                 }
 
-                // сравнение крест-накрест: a/b и c/d  <=>  a·d и b·c
-                val cross1: Float = a * d
-                val cross2: Float = b * c
+                // дроби для сравнения: b/a и d/c; крест-накрест: b/a и d/c  <=>  b·c и d·a
+                val cross1: Float = b * c
+                val cross2: Float = d * a
 
+                // показываем, какая дробь меньше (меньше b/a — вариант A дешевле)
                 val verdictRes = when {
                     abs(cross1 - cross2) < 0.000001f -> R.string.compare_result_equal
-                    cross1 > cross2 -> R.string.compare_result_first
+                    cross1 < cross2 -> R.string.compare_result_first
                     else -> R.string.compare_result_second
                 }
 
-                val f1: Float = a / b
-                val f2: Float = c / d
+                val f1: Float = b / a
+                val f2: Float = d / c
                 val details: String = getString(
                     R.string.compare_details_format,
                     String.format(Locale.US, "%f", f1),
-                    String.format(Locale.US, "%f", f2),
-                    String.format(Locale.US, "%f", abs(f1 - f2))
+                    String.format(Locale.US, "%f", f2)
                 )
 
                 outResult.text = getString(verdictRes) + "\n\n" + details

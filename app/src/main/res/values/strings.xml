@@ -17,20 +17,20 @@
 
     <!-- Экран «Сравнение» -->
     <string name="title_compare">Сравнение</string>
-    <string name="compare_description">Сравнение двух дробей a/b и c/d методом перемножения крест-накрест</string>
+    <string name="compare_description">Сравнение цены за единицу двух вариантов (b/a и d/c) — показывается, какая дробь меньше</string>
     <string name="compare_first_fraction">Первая дробь</string>
     <string name="compare_second_fraction">Вторая дробь</string>
     <string name="compare_button">Сравнить</string>
     <string name="compare_button_clear">Очистить</string>
-    <string name="compare_hint_a">a</string>
-    <string name="compare_hint_b">b</string>
-    <string name="compare_hint_c">c</string>
-    <string name="compare_hint_d">d</string>
-    <string name="compare_result_equal">Дроби равны — пропорция верна (a·d = b·c)</string>
-    <string name="compare_result_first">Первая дробь больше (a·d > b·c)</string>
-    <string name="compare_result_second">Вторая дробь больше (b·c > a·d)</string>
-    <string name="compare_details_format">a/b = %1$s\nc/d = %2$s\nРазница: %3$s</string>
-    <string name="toast_denominator_zero">Знаменатель (b или d) не может быть равен нулю</string>
+    <string name="compare_hint_a">кол-во A</string>
+    <string name="compare_hint_b">цена A</string>
+    <string name="compare_hint_c">кол-во B</string>
+    <string name="compare_hint_d">цена B</string>
+    <string name="compare_result_equal">Дроби равны (b/a = d/c) — цены за единицу одинаковы</string>
+    <string name="compare_result_first">Первая дробь меньше (b/a &lt; d/c) — вариант A дешевле</string>
+    <string name="compare_result_second">Вторая дробь меньше (d/c &lt; b/a) — вариант B дешевле</string>
+    <string name="compare_details_format">b/a = %1$s\nd/c = %2$s</string>
+    <string name="toast_denominator_zero">Кол-во A и кол-во B не могут быть равны нулю</string>
     <string name="toast_fill_all_fields">Заполните все четыре поля</string>
 
     <!-- Экран «Помощь» -->
@@ -42,7 +42,7 @@
     <string name="help_clear_title">Кнопки очистки</string>
     <string name="help_clear_text">Красная кнопка «Х» рядом с полями очищает соответствующие поля, кнопка «Очистить всё» удаляет значения из всех четырёх полей.</string>
     <string name="help_compare_title">Экран «Сравнение»</string>
-    <string name="help_compare_text">Раздел позволяет сравнить две дроби a/b и c/d: числа перемножаются крест-накрест (a·d и b·c), и приложение показывает, какая дробь больше или что они равны.</string>
+    <string name="help_compare_text">Раздел вычисляет цену за единицу для двух вариантов (цена A / кол-во A и цена B / кол-во B) и показывает, какая дробь меньше, то есть какой вариант дешевле.</string>
 
     <!-- Экран «О программе» -->
     <string name="title_about">О программе</string>
