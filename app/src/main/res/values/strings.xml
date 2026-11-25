@@ -1,3 +1,55 @@
 <resources>
     <string name="app_name">Вычисление пропорции</string>
+    <string name="app_title">Расчёт пропорций</string>
+    <string name="button_calculate">Рассчитать</string>
+    <string name="button_clear_all">Очистить всё</string>
+    <string name="button_clear">Очистить поле</string>
+    <string name="hint_unit">штуки/литры</string>
+    <string name="hint_currency">рубли</string>
+    <string name="toast_zero_field">Поле с одним числом равно нулю</string>
+    <string name="toast_missing_value">Установите хотя бы 1 значение</string>
+    <string name="toast_empty_base_fields">Заполните оба верхних поля (a и b)</string>
+
+    <!-- Меню приложения -->
+    <string name="menu_compare">Сравнение</string>
+    <string name="menu_help">Помощь</string>
+    <string name="menu_about">О программе</string>
+
+    <!-- Экран «Сравнение» -->
+    <string name="title_compare">Сравнение</string>
+    <string name="compare_description">Сравнение двух дробей a/b и c/d методом перемножения крест-накрест</string>
+    <string name="compare_first_fraction">Первая дробь</string>
+    <string name="compare_second_fraction">Вторая дробь</string>
+    <string name="compare_button">Сравнить</string>
+    <string name="compare_button_clear">Очистить</string>
+    <string name="compare_hint_a">a</string>
+    <string name="compare_hint_b">b</string>
+    <string name="compare_hint_c">c</string>
+    <string name="compare_hint_d">d</string>
+    <string name="compare_result_equal">Дроби равны — пропорция верна (a·d = b·c)</string>
+    <string name="compare_result_first">Первая дробь больше (a·d > b·c)</string>
+    <string name="compare_result_second">Вторая дробь больше (b·c > a·d)</string>
+    <string name="compare_details_format">a/b = %1$s\nc/d = %2$s\nРазница: %3$s</string>
+    <string name="toast_denominator_zero">Знаменатель (b или d) не может быть равен нулю</string>
+    <string name="toast_fill_all_fields">Заполните все четыре поля</string>
+
+    <!-- Экран «Помощь» -->
+    <string name="title_help">Помощь</string>
+    <string name="help_menu_title">Меню</string>
+    <string name="help_menu_text">Откройте меню (три точки в правом верхнем углу), чтобы перейти к разделам «Сравнение», «Помощь» и «О программе».</string>
+    <string name="help_calc_title">Расчёт пропорции</string>
+    <string name="help_calc_text">Введите известную пару чисел в верхние поля (например, 5 штук — 250 рублей), затем одно из чисел нижней пары и нажмите «Рассчитать». Неизвестный член пропорции находится по правилу креста:\n\nd = c·b / a  или  c = a·d / b\n\nЧисла a и b не должны быть равны нулю.</string>
+    <string name="help_clear_title">Кнопки очистки</string>
+    <string name="help_clear_text">Красная кнопка «Х» рядом с полями очищает соответствующие поля, кнопка «Очистить всё» удаляет значения из всех четырёх полей.</string>
+    <string name="help_compare_title">Экран «Сравнение»</string>
+    <string name="help_compare_text">Раздел позволяет сравнить две дроби a/b и c/d: числа перемножаются крест-накрест (a·d и b·c), и приложение показывает, какая дробь больше или что они равны.</string>
+
+    <!-- Экран «О программе» -->
+    <string name="title_about">О программе</string>
+    <string name="about_app_name">Вычисление пропорции</string>
+    <string name="about_version">Версия: 1.0</string>
+    <string name="about_description">Простое приложение для расчёта пропорций методом перемножения крест-накрест: по трём известным членам пропорции вычисляется четвёртый.</string>
+    <string name="about_author">Автор: svishs</string>
+    <string name="about_license_title">Лицензия</string>
+    <string name="about_license_text">MIT License\n\nCopyright (c) 2026 svishs\n\nПрограммное обеспечение распространяется «как есть» по лицензии MIT: разрешается свободно использовать, копировать, изменять и распространять его при сохранении данного уведомления.</string>
 </resources>

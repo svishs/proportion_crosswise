@@ -9,149 +9,154 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="0dp">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Рассчет пропорций"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/cl1"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/cl1"
-        app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorSurface"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_title" />
 
     <Button
         android:id="@+id/calc"
-        android:layout_width="343dp"
+        android:layout_width="0dp"
         android:layout_height="55dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
-        android:backgroundTint="#4CAF50"
-        android:text="рассчитать"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/green_primary"
+        android:text="@string/button_calculate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl2" />
 
     <Button
         android:id="@+id/clAllBut"
-        android:layout_width="343dp"
+        android:layout_width="0dp"
         android:layout_height="55dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
-        android:text="очистить всё"
+        android:layout_marginEnd="16dp"
+        android:text="@string/button_clear_all"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calc" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl1"
-        android:layout_width="412dp"
-        android:layout_height="87dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-        <EditText
-            android:id="@+id/num2"
-            android:layout_width="135dp"
-            android:layout_height="59dp"
-            android:layout_marginTop="11dp"
-            android:layout_marginEnd="24dp"
-            android:ems="10"
-            android:hint="рупии"
-            android:imeOptions="actionDone"
-            android:inputType="number|numberDecimal"
-            app:layout_constraintEnd_toStartOf="@+id/clBut1"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/num1"
-            app:layout_constraintTop_toTopOf="parent" />
-
+        <!-- горизонтальная цепочка: поля делят свободную ширину поровну, кнопка «Х» фиксированного размера -->
         <EditText
             android:id="@+id/num1"
-            android:layout_width="139dp"
+            android:layout_width="0dp"
             android:layout_height="59dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
-            android:ems="10"
-            android:hint="штуки/литры"
+            android:hint="@string/hint_unit"
             android:imeOptions="actionDone"
             android:inputType="number|numberDecimal"
+            app:layout_constraintEnd_toStartOf="@+id/num2"
+            app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/num2"
+            android:layout_width="0dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:hint="@string/hint_currency"
+            android:imeOptions="actionDone"
+            android:inputType="number|numberDecimal"
+            app:layout_constraintEnd_toStartOf="@+id/clBut1"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/num1"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/clBut1"
             android:layout_width="56dp"
             android:layout_height="56dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
-            android:backgroundTint="#F44336"
+            android:backgroundTint="@color/red_clear"
             android:text="Х"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/num2"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl2"
-        android:layout_width="409dp"
-        android:layout_height="161dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl1">
+
+        <!-- поля нижней пары также делят ширину поровну -->
+        <EditText
+            android:id="@+id/num3"
+            android:layout_width="0dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:hint="@string/hint_unit"
+            android:imeOptions="actionDone"
+            android:inputType="number|numberDecimal"
+            app:layout_constraintEnd_toStartOf="@+id/num4"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/num4"
+            android:layout_width="0dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/hint_currency"
+            android:imeOptions="actionDone"
+            android:inputType="number|numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/num3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- кнопки очистки выровнены под своими полями -->
+        <Button
+            android:id="@+id/clBut3"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/red_clear"
+            android:text="Х"
+            app:layout_constraintStart_toStartOf="@+id/num3"
+            app:layout_constraintTop_toBottomOf="@+id/num3" />
 
         <Button
             android:id="@+id/clBut4"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="92dp"
-            android:backgroundTint="#F44336"
+            android:backgroundTint="@color/red_clear"
             android:text="Х"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.972"
-            app:layout_constraintStart_toEndOf="@+id/clBut3"
+            app:layout_constraintEnd_toEndOf="@+id/num4"
             app:layout_constraintTop_toBottomOf="@+id/num4" />
-
-        <Button
-            android:id="@+id/clBut3"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_marginStart="96dp"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="#F44336"
-            android:text="Х"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/num3" />
-
-        <EditText
-            android:id="@+id/num4"
-            android:layout_width="135dp"
-            android:layout_height="59dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="11dp"
-            android:ems="10"
-            android:hint="рупии"
-            android:imeOptions="actionDone"
-            android:inputType="number|numberDecimal"
-            app:layout_constraintStart_toEndOf="@+id/num3"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/num3"
-            android:layout_width="139dp"
-            android:layout_height="59dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            android:ems="10"
-            android:hint="штуки/литры"
-            android:imeOptions="actionDone"
-            android:inputType="number|numberDecimal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

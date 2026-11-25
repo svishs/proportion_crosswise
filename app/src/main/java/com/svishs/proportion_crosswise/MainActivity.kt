@@ -1,8 +1,10 @@
 package com.svishs.proportion_crosswise
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -10,6 +12,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+
+
 
 
 import com.svishs.proportion_crosswise.databinding.ActivityMainBinding
@@ -24,6 +28,9 @@ class MainActivity : AppCompatActivity() {
       //  enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // панель с заголовком и меню приложения
+        setSupportActionBar(binding.toolbar)
 //        setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -48,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
                 // если первые 2 числа почти ноль, то выходим
                 if (n1==0f || n2 ==0f){
-                    Toast.makeText(this, "Поле с одним числом равно нулю", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.toast_zero_field, Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
                 }
                 if (inpNum3.text.toString().isNotBlank()|| inpNum4.text.toString().isNotBlank()){
@@ -68,9 +75,12 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 else                {
-                    Toast.makeText(this, "Установите хотя бы 1 значение", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.toast_missing_value, Toast.LENGTH_SHORT).show()
 
                 }
+            }
+            else {
+                Toast.makeText(this, R.string.toast_empty_base_fields, Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -94,5 +104,29 @@ class MainActivity : AppCompatActivity() {
             else -> emptyList()
         }
         fields.forEach { it.text.clear() }
+    }
+
+    // Меню приложения: переход к разделам «Сравнение», «Помощь», «О программе»
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_compare -> {
+                startActivity(Intent(this, ComparisonActivity::class.java))
+                true
+            }
+            R.id.action_help -> {
+                startActivity(Intent(this, HelpActivity::class.java))
+                true
+            }
+            R.id.action_about -> {
+                startActivity(Intent(this, AboutActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
